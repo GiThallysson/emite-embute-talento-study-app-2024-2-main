@@ -42,7 +42,7 @@ const ListaCartaoScreen = ({ navigation }) => {
 
     const cartoesAgrupadosPorStatus = (status) => cartoes.filter(cartao => cartao.status === status);
 
-    // Filtra os cartões próximos ao vencimento (15 dias)
+    
     const cartoesVencimentoProximo = cartoes.filter(cartao => {
         const dataTermino = new Date(cartao.dataTermino);
         const diferencaDias = (dataTermino - new Date()) / (1000 * 60 * 60 * 24);
@@ -51,7 +51,9 @@ const ListaCartaoScreen = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            {/* Botão para ver tarefas próximas ao vencimento */}
+            {
+              
+            }
             <TouchableOpacity style={styles.dueSoonButton} onPress={() => navigation.navigate('TarefasVencimentoProximo')}>
                 <Text style={styles.dueSoonButtonText}>Tarefas a Vencer: {cartoesVencimentoProximo.length}</Text>
             </TouchableOpacity>
@@ -131,14 +133,14 @@ const styles = StyleSheet.create({
         maxWidth: 170,
     },
     cardBacklog: {
-        backgroundColor: '#f5f5f5', // cinza claro para backlog
+        backgroundColor: '#f5f5f5', 
         borderColor: '#ddd',
     },
     cardDone: {
-        borderColor: '#32cd32', // borda verde para concluído
+        borderColor: '#32cd32', 
     },
     cardInProgress: {
-        borderColor: '#007bff', // borda azul para em progresso
+        borderColor: '#007bff',
     },
     cardTitle: {
         fontSize: 14,
@@ -160,7 +162,7 @@ const styles = StyleSheet.create({
         paddingVertical: 2,
     },
     addButton: {
-        backgroundColor: '#6c757d', // cor mais clean
+        backgroundColor: '#6c757d', 
         padding: 10,
         borderRadius: 6,
         flexDirection: 'row',
